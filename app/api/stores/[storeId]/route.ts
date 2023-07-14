@@ -1,6 +1,7 @@
-import prismadb from "@/lib/prismadb";
-import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs";
+
+import prismadb from "@/lib/prismadb";
 
 export async function PATCH(
   req: Request,
@@ -13,15 +14,15 @@ export async function PATCH(
     const { name } = body;
 
     if (!userId) {
-      return new NextResponse("Unauthenticated", { status: 401 });
+      return new NextResponse("Unauthenticated", { status: 403 });
     }
 
     if (!name) {
-      return new NextResponse("Name is requred", { status: 400 });
+      return new NextResponse("Name is required", { status: 400 });
     }
 
     if (!params.storeId) {
-      return new NextResponse("Store ID is required", { status: 400 });
+      return new NextResponse("Store id is required", { status: 400 });
     }
 
     const store = await prismadb.store.updateMany({
