@@ -1,5 +1,9 @@
 # Full Stack E-Commerce + Dashboard & CMS: Next.js 13 App Router, React, Tailwind, Prisma, MySQL, 2023
 
+### Demo Site
+
+[Ecommerce Admin](https://ecommerce-admin-virid.vercel.app/)
+
 For DEMO, use [Stripe Testing Cards](https://stripe.com/docs/testing)
 
 ### Prerequisites
